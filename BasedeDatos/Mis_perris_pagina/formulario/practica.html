@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Fomulario de Adopcion</title>
+  <meta name="viewport" content="width=device-width, intial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/formulario.css">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css" />
+  <script type="text/javascript" src="./js/bootstrap.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap-datepicker.min.js"></script>
+  <script src="./js/validacion.js"></script>
+
+</head>
+<body class="fondo">
+
+	<div class="container" >
+
+    <div class="row" >
+      <div class="col-xs-12 col-md-8" style="background-color: rgba(249,253,255,0.75); ">
+       <form class="form-horizontal" id="formulario" name="formulario" method="post" action="#">
+         <fieldset>
+          <!-- Titulo -->
+          <legend class="text-center header"><h3>Contáctanos</h3></legend>
+		  <h5>Los campos con (*) son obligatorios</h5>
+          <!-- Textbox de email -->
+          <div class="form-group">
+            <span class="text-center"><i class="fa fa-email bigicon"></i></span>
+            <div class="col-xs-12">
+              <h4>Email *</h4><input id="email" name="email" type="email" placeholder="Correo Electronico" class="form-control" required />
+            </div>
+          </div>
+
+          <!-- textbox del run -->
+          <div class="form-group">
+            <span class="text-center"><i class="fa fa-user bigicon"></i></span>
+            <div class="col-xs-12">
+              <h4>Run *</h4><input maxlength="10" id="run" name="run" type="text" placeholder="12345678-9" onkeypress="return solonumk(event)" class="form-control" required>
+            </div>
+          </div>
+
+          <!-- textbox del nombre -->
+          <div class="form-group">
+            <span class="text-center"><i class="fa fa-user bigicon"></i></span>
+            <div class="col-xs-12">
+              <h4>Nombre *</h4><input id="nombre" placeholder="Salvador Augusto" name="nombre" type="text"  class="form-control" required>
+            </div>
+          </div>
+
+          <!-- textbox del apellido -->
+          <div class="form-group">
+            <span class="text-center"><i class="fa fa-user bigicon"></i></span>
+            <div class="col-xs-12">
+              <h4>Apellido *</h4><input id="apellido" placeholder="Allende Pinochet" name="apellido" type="text"  class="form-control" required>
+            </div>
+          </div>
+
+
+          <!-- Date Picker -->
+		     <h4>Fecha de nacimiento *</h4>
+          <div class="text-center">
+           <input type="date" id="fec_nacimiento" max="2000-09-14" name="fec_nacimiento" class="form-control" required>
+           </div>
+        
+        <!-- numero de telefono -->
+        <h4>Fono</h4>
+        <div class="form-group row">
+          <span class="text-center"><i class="fa fa-phone-square bigicon"></i></span>
+            <div class="col-xs-12">
+            	<input class="form-control" style="width: 60px;float:left;" type="text" maxlength="3" name="codigo" disabled="disabled" value="+56">
+            	<input style="width: 500px; display: block; margin: 0 auto; float:left;" maxlength="9" id="telefono" name="telefono" type="text" onkeypress="return solonum(event)" placeholder="Número de telefono (9 1234 5678)" class="form-control">
+            </div>
+        </div>
+
+        <!-- Combobox de regiones de Chile -->
+          <div class="form-group col-xs-12">
+           <span class="text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+           <h4>Región *</h4>
+           <select class="form-control" id="region" name="region" required>
+             <option value="" selected="selected" disabled="disabled">Selecione una opción</option>
+             <option value="Region15">XV de Arica y Parinacota</option>
+             <option value="Region1">I de Tarapacá</option>
+             <option value="Region2">II de Antofagasta</option>
+             <option value="Region3">III de Atacama</option>
+             <option value="Region4">IV de Coquimbo</option>
+             <option value="Region5">V de Valparaíso</option>
+             <option value="Region6">VI del Libertador General Bernardo O'Higgins</option>
+             <option value="Region7">VII del Maule</option>
+             <option value="Region8">VIII del Bío Bío</option>
+             <option value="Region9">IX de la Araucanía</option>
+             <option value="Region14">XIV de los Ríos</option>
+             <option value="Region10">X de los Lagos</option>
+             <option value="Region11">XI Aisén del General Carlos Ibáñez del Campo</option>
+             <option value="Region12">XII de Magallanes y Antártica Chilena</option>
+             <option value="Region13">Metropolitana de Santiago</option>
+           </select>
+         </div>
+
+       <!-- Combobox de ciudades de Chile -->
+        <div class="form-group col-xs-12">
+          <span class="text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+          <h4>Ciudad *</h4>
+          <select class="form-control" id="ciudad" name="ciudad" required>
+           <option value="" selected="selected" disabled="disabled">Selecione una opción</option>
+           <option value="Valor1">Santiago</option>
+           <option value="valor2">Arica</option>
+           <option value="valor3">Parinacota</option>
+           <option value="valor4">Iquique</option>
+           <option value="valor5">Tamarugal</option>
+           <option value="Valor6">Antofagasta</option>
+           <option value="Valor7">Loa</option>
+           <option value="Valor8">Tocopilla</option>
+           <option value="Valor9">Copiapó</option>
+           <option value="valor10">Chañaral</option>
+           <option value="Valor11">Huasco</option>
+           <option value="Valor12">Elqui</option>
+           <option value="Valor13">Choapa</option>
+           <option value="Valor14">Limarí</option>
+           <option value="Valor15">Valparaíso</option>
+           <option value="Valor16">Los andes</option>
+           <option value="Valor17">Petorca</option>
+           <option value="Valor18">Petorca</option>
+           <option value="Valor19">Quillota</option>
+           <option value="Valor20">San antonio</option>
+           <option value="Valor21">San Felipe de Aconcagua</option>
+           <option value="Valor22">Marga Marga</option>
+           <option value="Valor23">Cachapoal</option>
+           <option value="Valor24">Cardenal Caro</option>
+           <option value="Valor25">Colchagua</option>
+           <option value="Valor26">Talca</option>
+           <option value="Valor27">Cauquenes</option>
+           <option value="Valor28">Curicó</option>
+           <option value="Valor29">Linares</option>
+           <option value="Valor30">Concepción</option>
+           <option value="Valor31">Arauco</option>
+           <option value="Valor32">Biobío</option>
+           <option value="Valor33">Ñuble</option>
+           <option value="Valor34">Cautín</option>
+           <option value="Valor35">Malleco</option>
+           <option value="Valor36">Valdivia</option>
+           <option value="Valor37">Ranco</option>
+           <option value="Valor38">Llanquihue</option>
+           <option value="Valor39">Chiloé</option>
+           <option value="Valor40">Osorno</option>
+           <option value="Valor41">Palena</option>
+           <option value="Valor42">Coyhaique</option>
+           <option value="Valor43">Aysén</option>
+           <option value="Valor44">Capitán Prat</option>
+           <option value="Valor45">General Carrera</option>
+           <option value="Valor46">Magallanes</option>
+           <option value="Valor47">Antártica Chilena</option>
+           <option value="Valor48">Tierra del Fuego</option>
+           <option value="Valor49">Ultima Esperanza</option>
+           <option value="Valor50">Cordillera</option>
+           <option value="Valor51">Chacabuco</option>
+           <option value="Valor52">Maipo</option>
+           <option value="Valor53">Melipilla</option>
+           <option value="Valor54">Talagante</option>
+         </select>
+       </div>
+
+     <!-- Combobox de tipo de vivienda-->
+     <div class="form-group col-xs-12">
+      <span class="text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+        <div >
+          <h4>Tipo de casa *</h4>
+            <select class="form-control" required>	
+              <option value="" selected="selected" disabled="disabled">Selecione una opción</option>
+              <option>Casa con patio grande</option>
+              <option>Casa con patio pequeño</option>
+              <option>Casa sin patio</option>
+            <option>Departamento</option>
+            </select>
+        </div>
+      </div>
+   <br />
+   <br />
+   <!-- Boton de envío -->
+   <div class="form-group">
+      <div class=" text-center">
+       <input class="btn btn-primary" type="submit" id="enviar" name="btn" value="Enviar" />
+      </div>
+    </div>
+
+        </fieldset>
+      </form> <!-- Termino dle form -->
+    </div> <!-- col -->
+  </div> <!-- Row -->
+</div> <!-- Container -->
+<!-- Fin del Codigo -->
+</body>
+</html>
