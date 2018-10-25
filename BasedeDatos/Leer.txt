@@ -1,0 +1,6 @@
+para iniciar la base de datos se ejecuta el comando
+python manage.py runserver
+
+luego te muestra una ip la copias y la pegas agregando "/admin"
+
+usuario administrador :misperris , contraseña :misperris
