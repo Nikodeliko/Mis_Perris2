@@ -1,0 +1,65 @@
+{% extends 'mantenedor/base/base.html' %}
+
+{% block content %}
+	<br>
+	<!--
+	<div class="col-xs-12 col-lg-8 mx-auto">
+		<form class="navbar-search" method="POST" action="{% url 'mantenedor:buscar_perro' %}">
+			{% csrf_token %}
+			<input type="text" name="buscando" class="search-query" placeholder="Buscar">
+			<div class="btn-group">
+				<button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+			</div>
+		</form>
+	</div>	
+	<br>
+-->
+	<div class="col-xs-12 col-lg-8 mx-auto">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Fotografia</td>
+					<td>Nombre</td>
+					<td>Raza</td>
+					<td>Descripcion</td>
+					<td>Estado</td>
+					<td>Acciones</td>
+				</tr>
+			</thead>
+			<tbody>
+				{% if object_list %}
+				{% for perro in object_list %}
+				<tr>
+					<td>{{perro.id}}</td>
+					<td>{{perro.fotografia}}</td>
+					<td>{{perro.nombre}}</td>
+					<td>{{perro.raza}}</td>
+					<td>{{perro.descripcion}}</td>
+					<td>{{perro.estado}}</td>
+					<td>
+						<a class="btn btn-primary" href="{% url 'mantenedor:actualizar_perro' perro.id %}">Editar</a>
+						<a class="btn btn-danger" href="{% url 'mantenedor:eliminar_perro' perro.id %}">Eliminar</a>
+					</td>	
+				</tr>
+				{% endfor %}
+
+				{% else %}
+				<h1>No hay registros de perros</h1>
+
+				{% endif %}
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="col-xs-12 col-lg-8 mx-auto">
+		<a class="btn btn-primary" href="{% url 'mantenedor:index' %}">Volver al Menu Principal</a>
+		{% if page_obj.has_previous %}
+			<a class="btn btn-secondary"href="?page={{page_obj.previous_page_number}}">Anterior</a>
+		{% endif %}
+
+		{% if page_obj.has_next %}
+			<a class="btn btn-secondary" href="?page={{page_obj.next_page_number}}">Siguiente</a>
+		{% endif %}
+	</div>
+{% endblock %}

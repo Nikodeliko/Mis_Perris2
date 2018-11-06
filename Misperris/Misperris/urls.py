@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from Index import views
 
 urlpatterns = [
@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^Registrar/$',views.agregarusuario,name="agregarusuario"),
     url(r'^login/$',views.ingresar,name="login"),
     url(r'^salir/$',views.salir,name="logout"),
+    url(r'^mantenedor/', include(('apps.mantenedormascota.urls', 'mantenedor'), namespace='mantenedor')),
 ]
