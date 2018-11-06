@@ -25,4 +25,8 @@ urlpatterns = [
     url(r'^Registrar/$',views.agregarusuario,name="agregarusuario"),
     url(r'^login/$',views.ingresar,name="login"),
     url(r'^salir/$',views.salir,name="logout"),
+    url(r'^Vista_adopcion/$', views.Vista_adopcion, name="Vista_adopcion"),
+    url(r'^Vista_adopcion2/$', views.Vista_adopcion2, name="Vista_adopcion2"),
+    url(r'^Vista_adopcion3/$', views.Vista_adopcion3, name="Vista_adopcion3"),
+    url(r'^Vista_adopcion4/$', views.Vista_adopcion4, name="Vista_adopcion4"),
 ]

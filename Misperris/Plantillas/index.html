@@ -45,6 +45,7 @@
 		                <a href="{% url 'agregarusuario'%}">Registrarse</a>
 		                <a href="{% url 'logout' %}">Salir</a>
 
+
 		                {%if acciones%}
 		                    {%for a in acciones%}
 		                        
@@ -80,7 +81,7 @@
 			</div>
 
 			<div class="col-xs-12 col-lg-3">
-				<a href="#" target="_blank"> Quienes somos </a>
+				<a href="{% url 'Vista_adopcion' %}" target="_blank"> Quienes somos </a>
 			</div>
 
 			<div class="col-xs-12 col-lg-3">

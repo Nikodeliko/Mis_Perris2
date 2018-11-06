@@ -1,0 +1,41 @@
+.alineacion {
+	align-items: 0px;
+}
+
+.tipo-letra{
+	font-style: Arial;
+}
+
+.fondo{
+		background-image: url("http://www.maspormas.com.s3-website-us-east-1.amazonaws.com/img/2016/07/perros-y-poker.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: 100%;
+		padding-top: 20px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 0px){
+	.fondo{
+		background-image: none;
+		background-repeat: no-repeat;
+		background-color: rgba(62,170,210,0.75);
+		background-size: 100%;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 992px){
+	.fondo{
+		background-image: url("http://www.maspormas.com.s3-website-us-east-1.amazonaws.com/img/2016/07/perros-y-poker.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-color: rgba(62,170,210,0.75);
+		width: 100%;
+	}
+}
+
+
+
+

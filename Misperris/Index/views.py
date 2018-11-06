@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Usuario
 
+# Vista principal
 def plantilla_cargada(request):
     return render_to_response("index.html")
 
@@ -75,3 +76,13 @@ def agregarusuario(request):
     usuarios=Usuario.objects.all()
     form=AgregarUsuario()
     return render(request,"agregarusuario.html",{'form':form,'usuarios':usuarios,'acciones':acciones,})
+
+# Vista de cliente para adoptar un perrito  :3 
+def Vista_adopcion(request):
+    return render_to_response("./Vista/Vista.html")
+def Vista_adopcion2(request):
+    return render_to_response("./Vista/Vista2.html")
+def Vista_adopcion3(request):
+    return render_to_response("./Vista/Vista3.html")
+def Vista_adopcion4(request):
+    return render_to_response("./Vista/Vista4.html")

@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Misperris.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/nicoi/Desktop/Misperris/Plantillas'],
+        'DIRS': [os.path.join(BASE_DIR, 'Plantillas')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

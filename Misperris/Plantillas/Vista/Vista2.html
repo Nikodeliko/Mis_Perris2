@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, intial-scale=1.0">
+
+		<title>Vista de adopcion</title>
+
+		<!-- scripts -->
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+		<script src="{% static 'js/Vista.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery-latest.min.js' %}"></script>
+		
+		<!-- JQuery -->
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7js/jquery.min.js"></script>
+		
+		<!-- links -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/Estilopag.css' %}">
+		
+		<!-- linkeos del fancy -->
+		<link rel="stylesheet" href="{% static './source/jquery.fancybox.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{% static './source/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{% static './source/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+		<!-- scripts del fancy -->
+		<script type="text/javascript" src="{% static 'lib/jquery.mousewheel-3.0.6.pack.js' %}"></script>
+		<script type="text/javascript" src="{% static 'source/jquery.fancybox.pack.js?v=2.1.7' %}"></script>
+		<script type="text/javascript" src="{% static 'source/helpers/jquery.fancybox-buttons.js?v=1.0.5' %}"></script>
+		<script type="text/javascript" src="{% static 'source/helpers/jquery.fancybox-media.js?v=1.0.6' %}"></script>
+		<script type="text/javascript" src="{% static 'source/helpers/jquery.fancybox-thumbs.js?v=1.0.7' %}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js%22%3E"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js%22%3E"/>
+
+    	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+		<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".fancybox").fancybox();
+			});
+		</script>
+
+
+	</head>
+	<body>
+		<div id="contenido" class="content">
+			<header>
+				<hgroup> 
+					<h1>Vista de perritos</h1>
+				</hgroup>
+				<nav>
+					<ul>
+						<li><a href="{% url 'Vista_adopcion' %}">Inicio</a></li>
+						<li><a href="{% url 'Vista_adopcion2' %}">Adoptados</a></li>
+						<li><a href="{% url 'Vista_adopcion3' %}">Rescatados</a></li>
+						<li><a href="{% url 'Vista_adopcion4' %}">Disponibles</a></li>
+						
+					</ul>
+				</nav>
+			</header>
+			<section>
+				<div id="perros">
+					<div class="row col-xs-3 col-md-8 col-lg-12" >
+						<hgroup>
+							<h1>Adoptados</h1>
+						</hgroup>
+						<article>
+							<div class="col-md-3">
+								<div class="thumbnail">
+									<a href="{% static 'img/1.jpg' %}" class="fancybox" rel="group">
+									<img src="{% static 'img/1.jpg' %}" >
+									</a>
+									<p class="caption">Michi, es un lindo cachorrito que fué encontrado cuando su mamá dió a luz, lamentablemente y para suerte de este fué el unico encontrado con vida. Michi fue adoptado por una linda familia a días de llegar a nuestra organización.</p>
+								</div> <!-- thubmnail -->
+							</div> <!-- col-md-3 -->
+
+							<div class="col-md-3">
+								<div class="thumbnail">
+									<a href="{% static 'img/2.jpg' %}" class="fancybox" rel="group">
+									<img src="{% static 'img/2.jpg' %}">
+									</a>
+									<p class="caption">Kurumi fué una linda cachorra que pertenecio a nuestra organización, fue encontrada sola en la calle dando vueltas para todos lados es un poco timida con la gente pero es cariñosa.</p>
+								</div> <!-- thumbnail -->
+							</div> <!-- col-md-3 -->
+
+						</article>
+					</div><!-- row -->
+				</div><!-- perros -->
+			</section>
+		</div>
+
+	
+	</body>
+</html>
