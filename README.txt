@@ -18,7 +18,7 @@ Prueba número 1 : "Creación, modificación, y eliminación de un perro"
   Eliminación:
   1* Para eliminar el registro del perro que queramos debemos ingresar nuevamente al listado de registros para encontrar el animal que se necesita eliminar, una vez encontrado el perro deseado se selecciona la opción y eliminamos nuestro registro de la base de datos.
   
-  3* Despues de eliminarlo, nos cercionamos que este no se encuentre en el listado.
+  2* Despues de eliminarlo, nos cercionamos que este no se encuentre en el listado.
  
  Resultados esperados
   Creación, modificación y eliminación de un perro
@@ -26,6 +26,22 @@ Prueba número 1 : "Creación, modificación, y eliminación de un perro"
  Resultado final
   Funcionalidad completa
   
- Prueba número 2:
+ Prueba número 2: "Login de usuario"
+ 
+ Para Posterior ingreso de usuario previamente se debe realizar un registro de usuario valga la rebudancia, el cual se realiza directamente desde la pagina:
+ 
+ Pasos del registro:
+ 1* Ingresando a la pagina se visualizará la opcion para logearse y registrarse, en este caso nos centraremos en la que dice registro para hacernos nuestro usuario en la base de datos.
+ 2* Debemos ingresar nombre de usuario, contraseña y correo electronico, una vez ingresado los datos seleccionamos que tipo de usuario esta siendo ingresado.
+ 
+ Ingreso:
+ 1* Una véz creado el usuario en la base de datos, seguimos el con el paso siguiente que es logearnos en la página, seleccionamos la opción usuarios colocamos nuestros datos y contraseña y ingresamos.
+ 2* Para salir seleccionamos la opción salir.
+ 
+ Resultados esperados:
+ Registro y logeo de usuario en la página "Mis Perris".
+ 
+ Resultado final:
+ Registro exitoso y login completo en la página web.
 
 
