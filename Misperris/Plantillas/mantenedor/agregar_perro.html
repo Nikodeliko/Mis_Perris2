@@ -2,13 +2,12 @@
 
 	{% block content %}
 	<div class="col-xs-12 col-lg-6 mx-auto">
-		<form method="post">
+		<form method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ form.as_p }}
 		<button class="btn btn-success" type="submit">Guardar</button>
-		<a class="btn btn-primary" href="{% url 'mantenedor:index' %}">Volver al Menu Principal</a>	
+		<a class="btn btn-primary" href="{% url 'mantenedor:index' %}">Volver al Menu Principal</a>
 		</form>
 
 	</div>
 	{% endblock %}
-	

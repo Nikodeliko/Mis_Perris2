@@ -11,7 +11,7 @@
 				<button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
 			</div>
 		</form>
-	</div>	
+	</div>
 	<br>
 -->
 	<div class="col-xs-12 col-lg-8 mx-auto">
@@ -32,7 +32,7 @@
 				{% for perro in object_list %}
 				<tr>
 					<td>{{perro.id}}</td>
-					<td>{{perro.fotografia}}</td>
+					<td><img src='{{perro.fotografia.url}}' width="150" height="150"></td>
 					<td>{{perro.nombre}}</td>
 					<td>{{perro.raza}}</td>
 					<td>{{perro.descripcion}}</td>
@@ -40,7 +40,7 @@
 					<td>
 						<a class="btn btn-primary" href="{% url 'mantenedor:actualizar_perro' perro.id %}">Editar</a>
 						<a class="btn btn-danger" href="{% url 'mantenedor:eliminar_perro' perro.id %}">Eliminar</a>
-					</td>	
+					</td>
 				</tr>
 				{% endfor %}
 
@@ -51,7 +51,7 @@
 			</tbody>
 		</table>
 	</div>
-	
+
 	<div class="col-xs-12 col-lg-8 mx-auto">
 		<a class="btn btn-primary" href="{% url 'mantenedor:index' %}">Volver al Menu Principal</a>
 		{% if page_obj.has_previous %}
