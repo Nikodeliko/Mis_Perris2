@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	{% block extrahead %}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" >
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fancybox.min.css' %}">
+	<link rel=icon href="{% static 'img/favicon.png' %}" sizes="16x16" type="image/png">
+	{% endblock %}
+
+	<title>{% block title %}Mantenedor - MisPerris {% endblock %}</title>
+</head>
+<body>
+	<div class="container-fluid">
+		{% block header %}
+	<div class="row">
+		<div class="col-xs-12 header" id="titulo" >
+			<a class="navbar-brand" href="{% url 'mantenedor:index' %}">
+				<img src="{% static 'img/logo.png' %}" alt="Aqui esta el logo"/>
+			</a>
+		</div>
+	</div>
+	{% endblock %}
+
+	{% block content %}
+
+		<div class="row">
+		</div>
+
+	{% endblock %}
+
+	{% block footer %}
+	<div class="row">
+		<div class="col-xs-12 pie">
+			<p>Desarrollo Web y Mobile</p>
+		</div>
+	</div>
+	{% endblock %}
+	</div>
+
+
+	{% block extrajs %}
+	<script src="{% static 'js/popper.min.js' %}"></script>
+
+	<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+
+	<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+	{% endblock %}
+
+</body>
+</html>
