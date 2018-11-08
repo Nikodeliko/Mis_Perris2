@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		{% load static %}
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, intial-scale=1.0">
+
+		<title>Vista de adopcion</title>
+
+		<!-- scripts -->
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+		<script src="{% static 'js/Vista.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery-latest.min.js' %}"></script>
+
+		<!-- JQuery -->
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7js/jquery.min.js"></script>
+
+		<!-- links -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/Estilopag.css' %}">
+
+		<!-- linkeos del fancy -->
+		<link rel="stylesheet" href="{% static '/Vista/source/jquery.fancybox.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{% static 'source/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{% static 'source/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+		<!-- scripts del fancy -->
+		<script type="text/javascript" src="{% static './lib/jquery.mousewheel-3.0.6.pack.js' %}"></script>
+		<script type="text/javascript" src="{% static './source/jquery.fancybox.pack.js?v=2.1.7' %}"></script>
+		<script type="text/javascript" src="{% static './source/helpers/jquery.fancybox-buttons.js?v=1.0.5' %}"></script>
+		<script type="text/javascript" src="{% static './source/helpers/jquery.fancybox-media.js?v=1.0.6' %}"></script>
+		<script type="text/javascript" src="{% static './source/helpers/jquery.fancybox-thumbs.js?v=1.0.7' %}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js%22%3E"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("fancybox").fancybox();
+			});
+		</script>
+
+
+	</head>
+	<body>
+		<div id="contenido" class="content">
+
+
+			<header>
+				<hgroup>
+					<h1>Vista de perritos</h1>
+				</hgroup>
+				<nav>
+					<ul>
+						<li><a href="{% url 'usuario:index' %}">Inicio</a></li>
+						<li><a href="{% url 'usuario:vista2' %}">Disponibles</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<section>
+				<div id="perros" >
+					<div class="row col-xs-3 col-md-8 col-lg-12" >
+						<hgroup>
+							<center>
+								<h1>¿Quienes somos?</h1>
+							</center>
+						</hgroup>
+						<article>
+							<h2>Somos una organización sin fines de lucro, nos encargamos de rescartar, dar primeros auxilios y cuidar a perros que se encuentran abandonados, maltratados o en peligro.</h2>
+						</article>
+					</div><!-- row -->
+				</div><!-- perros -->
+			</section>
+		</div>
+
+	</body>
+</html>
