@@ -58,7 +58,7 @@
 					<nav>
 						<ul>
 							<li><a href="{% url 'usuario:index' %}">Inicio</a></li>
-							<li><a href="{% url 'usuario:vista2' %}">Adoptados</a></li>
+							<li><a href="{% url 'usuario:vista2' %}">Disponibles</a></li>
 						</ul>
 					</nav>
 			</header>
@@ -68,7 +68,7 @@
 				<div id="perros">
 					<div class="row">
 							<hgroup>
-								<h1>Adoptados</h1>
+								<h1>Disponibles</h1>
 							</hgroup>
 
 							<table class="table table-bordered">
@@ -86,7 +86,7 @@
 								<tbody>
 									{% if object_list %}
 									{% for perro in object_list %}
-										{% if perro.estado.descripcion == 'Adoptado' %}
+										{% if perro.estado.descripcion == 'Disponible' %}
 											<tr>
 												<td>{{perro.id}}</td>
 												<td><img src='{{perro.fotografia.url}}' style=" width:30%; height: 20%;"></td>
