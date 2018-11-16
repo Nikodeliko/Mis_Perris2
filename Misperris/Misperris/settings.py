@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Index',
     'apps.mantenedormascota',
     'apps.usuario',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'estaesunacuentadepruebas2018@gmail.com'
 EMAIL_HOST_PASSWORD = 'q1w2e3r4.3102'
+LOGIN_REDIRECT_URL = '/'

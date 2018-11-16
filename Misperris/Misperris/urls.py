@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^registrar/$',views.agregarusuario,name="agregarusuario"),
     url(r'^mantenedor/',include(('apps.mantenedormascota.urls', 'mantenedor'), namespace='mantenedor')),
     url(r'^vista-adopcion/', include(('apps.usuario.urls', 'usuario'), namespace='usuario')),
+     url(r'^api-auth/', include('rest_framework.urls')),
 
     #Recuperar contraseña
 
