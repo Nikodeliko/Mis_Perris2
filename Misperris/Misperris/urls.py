@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth import views as auth_views
+from rest_framework.authtoken import views
+
 
 from django.contrib import admin
 from django.urls import path
@@ -32,8 +34,9 @@ urlpatterns = [
     url(r'^registrar/$',views.agregarusuario,name="agregarusuario"),
     url(r'^mantenedor/',include(('apps.mantenedormascota.urls', 'mantenedor'), namespace='mantenedor')),
     url(r'^vista-adopcion/', include(('apps.usuario.urls', 'usuario'), namespace='usuario')),
-     url(r'^mitula/', include('rest_framework.urls')),
-
+    url(r'^DRF/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api/v1/', include('Index.urls', namespace='Index')),
+    url(r'^api/v1/auth', include('rest_framework.url', namespace='rest_framework')),
     #Recuperar contraseña
 
     url(r'^password-reset/$', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'), name="password_reset"),

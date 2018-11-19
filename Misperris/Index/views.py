@@ -1,11 +1,14 @@
 from django.shortcuts import render_to_response
 from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from .forms import AgregarUsuario, Login
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Usuario
+from .models import Usuario, Region, Ciudad, Tipo_Vivienda, Formulario
+from rest_framework import generics
+from .serializers import PerrisSerializer
 
 def plantilla_cargada(request):
     return render_to_response("index.html")
@@ -85,3 +88,15 @@ def Vista_adopcion3(request):
     return render_to_response("Vista/Vista3.html")
 def Vista_adopcion4(request):
     return render_to_response("Vista/Vista4.html")
+
+class PerrisList(generics.ListCreateAPIView):
+    queryset = Formulario.objects.all()
+    serializers_class = PerrisSerializer
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        obj = get_object_or_404(
+            queryset,
+            pk=self.kwargs('pk'),
+            )
+        return obj

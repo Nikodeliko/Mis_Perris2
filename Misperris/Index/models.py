@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+
 # Create your models here.
 #manejo de usuarios perzonalizados
 class Usuario(models.Model):
@@ -28,9 +29,8 @@ class Formulario(models.Model):
 	Run = models.CharField(max_length=10)
 	Nombre = models.CharField(max_length=100)
 	Apellido = models.CharField(max_length=100)
-	Fecha_Nacimineto = models.DateField()
+	Fecha_Nacimiento = models.DateField()
 	Fono =models.PositiveSmallIntegerField()
-
 #class Raza_predominante(models.Model):
 #	Id_Raza = models.PositiveSmallIntegerField()
 #	Descripcion = models.CharField(max_length=30)
