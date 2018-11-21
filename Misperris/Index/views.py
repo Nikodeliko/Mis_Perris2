@@ -8,7 +8,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Usuario, Region, Ciudad, Tipo_Vivienda, Formulario
 from rest_framework import generics
-from .serializers import PerrisSerializer
+from django.contrib.auth.models import User, Group 
+from rest_framework import viewsets 
+from .serializers import SerializerUsuario 
 
 def plantilla_cargada(request):
     return render_to_response("index.html")
@@ -89,14 +91,22 @@ def Vista_adopcion3(request):
 def Vista_adopcion4(request):
     return render_to_response("Vista/Vista4.html")
 
-class PerrisList(generics.ListCreateAPIView):
+class UsuarioView(viewsets.ModelViewSet):
     queryset = Formulario.objects.all()
-    serializers_class = PerrisSerializer
+    serializer_class = SerializerUsuario
+    
+        
 
-    def get_object(self):
-        queryset = self.get_queryset()
-        obj = get_object_or_404(
-            queryset,
-            pk=self.kwargs('pk'),
-            )
-        return obj
+class UserViewSet(viewsets.ModelViewSet):    
+    """     
+    API endpoint that allows users to be viewed or edited.    
+    """     
+    queryset = User.objects.all().order_by('-date_joined')     
+    serializer_class = UserSerializer 
+ 
+class GroupViewSet(viewsets.ModelViewSet):     
+    """     
+    API endpoint that allows groups to be viewed or edited.     
+    """    
+    queryset = Group.objects.all()     
+    serializer_class = GroupSerializer

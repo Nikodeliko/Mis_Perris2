@@ -1,7 +1,7 @@
-from .models import Usuario, Region, Ciudad, Tipo_Vivienda, Formulario
+from .models import *
 from rest_framework import serializers
 
-class PerrisSerializer(serializers.HyperlinkedModelSerializer):
+class SerializerUsuario(serializers.HyperLinkedModelSerielizer):
 	class Meta:
 		model = Formulario
-		fields = ('Run', 'Apellido', 'Nombre', 'Correo')
+		fields = ('Run','Nombre', 'Apellido', 'Fono')

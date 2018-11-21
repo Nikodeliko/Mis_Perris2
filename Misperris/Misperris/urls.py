@@ -17,13 +17,24 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth import views as auth_views
 from rest_framework.authtoken import views
+from django.conf.urls import url, include 
+from rest_framework import routers 
 
 
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from Index import views
+from Index.views import *
 
+router = routers.DefaultRouter() 
+router.register('VerUsuario', views.UsuarioView) 
+router.register(r'groups', views.GroupViewSet) 
+ 
+# Wire up our API using automatic URL routing. # Additionally, we include login URLs for the browsable API. 
+urlpatterns = [     
+url(r'^', include(router.urls)),     
+url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')) 
+]
 
 urlpatterns = [
     url(r'^$',views.plantilla_cargada),
@@ -34,9 +45,7 @@ urlpatterns = [
     url(r'^registrar/$',views.agregarusuario,name="agregarusuario"),
     url(r'^mantenedor/',include(('apps.mantenedormascota.urls', 'mantenedor'), namespace='mantenedor')),
     url(r'^vista-adopcion/', include(('apps.usuario.urls', 'usuario'), namespace='usuario')),
-    url(r'^DRF/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/v1/', include('Index.urls', namespace='Index')),
-    url(r'^api/v1/auth', include('rest_framework.url', namespace='rest_framework')),
+    url(r'^', include(router.urls)),
     #Recuperar contraseña
 
     url(r'^password-reset/$', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'), name="password_reset"),
