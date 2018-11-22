@@ -40,9 +40,16 @@
 	max-width: 50px;
 	max-height: 50px;
 }
+.redsocial a{
+	margin: auto;
+	width: auto;
+	height: auto;
+	max-width: 50px;
+	max-height: 50px;
+}
 
 .img{
-	padding-left:10px; 
+	padding-left:10px;
 	padding-top:10px;
 }
 .header{
@@ -68,11 +75,11 @@
 	font-weight: 500; /* Enancha la fuente */
 }
 
-.menu a:hover { 
-	text-decoration: none; /* esto quita el subrayado */ 
-	color: #76D7C4; /* se sobreentiende */ 
-	font-weight: bold; 
-} 
+.menu a:hover {
+	text-decoration: none; /* esto quita el subrayado */
+	color: #76D7C4; /* se sobreentiende */
+	font-weight: bold;
+}
 
 #ladoderecho{
 	float:right;
@@ -117,7 +124,7 @@
 }
 
 .galeria{
-	
+
     width: 100%;
 	max-height: 960px;
 	background-color: #76D7C4;
@@ -154,7 +161,7 @@
 }
 
 .pie {
-	
+
 	width: 100%;
 	height: 50px;
 	background-color: #e6e6e6;
@@ -164,4 +171,3 @@
 	padding-left: 15px;
 	color: #6b6a6a;
 }
-

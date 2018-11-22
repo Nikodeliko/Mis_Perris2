@@ -47,6 +47,7 @@
 
 		                <a href="{% url 'gestionarUsuarios'%}">Iniciar sesion</a>
 		                <a href="{% url 'agregarusuario'%}">Registrarse</a>
+										<a href="{% url 'social:begin' 'facebook'%}">Iniciar con Facebook</a>
 		                <a href="{% url 'logout' %}">Salir</a>
 
 		                {%if acciones%}
@@ -166,7 +167,7 @@
 	<!-- ********************* FIN DEL CAROUSEL ********************** -->
 	<div class="row">
 		<div class="col-xs-12 redsocial">
-			<a href="{% url 'social:begin' 'facebook'%}"><img class="img-fluid" src="{% static 'iconos/facebook.png' %}" alt="facebook" /></a>
+			<a  href="{% url 'social:begin' 'facebook'%}"><img class="img-fluid" src="{% static 'iconos/facebook.png' %}" alt="facebook" /></a>
 			<img class="img-fluid" src="{% static 'iconos/google.png' %}" alt="google" />
 			<img class="img-fluid" src="{% static 'iconos/instagram.png' %}" alt="instagram"/>
 			<img class="img-fluid" src="{% static 'iconos/gmail.png' %}" alt="gmail"/>
