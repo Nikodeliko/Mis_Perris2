@@ -1,7 +1,8 @@
 from .models import *
 from rest_framework import serializers
 
-class SerializerUsuario(serializers.HyperLinkedModelSerielizer):
+class SerializerUsuario(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = Formulario
-		fields = ('Run','Nombre', 'Apellido', 'Fono')
+		fields = ['Tipo_Vivienda', 'Region', 'Ciudad', 'Correo', 'Run', 'Nombre', 'Apellido', 'Fecha_Nacimiento', 'Fono']
+		lookup_field = 'username'

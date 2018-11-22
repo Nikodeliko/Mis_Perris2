@@ -10,7 +10,8 @@ from .models import Usuario, Region, Ciudad, Tipo_Vivienda, Formulario
 from rest_framework import generics
 from django.contrib.auth.models import User, Group 
 from rest_framework import viewsets 
-from .serializers import SerializerUsuario 
+from .serializers import SerializerUsuario
+from django.contrib.auth.decorators import login_required
 
 def plantilla_cargada(request):
     return render_to_response("index.html")
@@ -94,19 +95,7 @@ def Vista_adopcion4(request):
 class UsuarioView(viewsets.ModelViewSet):
     queryset = Formulario.objects.all()
     serializer_class = SerializerUsuario
-    
-        
 
-class UserViewSet(viewsets.ModelViewSet):    
-    """     
-    API endpoint that allows users to be viewed or edited.    
-    """     
-    queryset = User.objects.all().order_by('-date_joined')     
-    serializer_class = UserSerializer 
- 
-class GroupViewSet(viewsets.ModelViewSet):     
-    """     
-    API endpoint that allows groups to be viewed or edited.     
-    """    
-    queryset = Group.objects.all()     
-    serializer_class = GroupSerializer
+@login_required
+def home(request):
+    return render(request, 'core/home.html')
